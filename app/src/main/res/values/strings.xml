@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Desafio Android</string>
+    <string name="str_try_again">Try again</string>
+    <string name="str_error">Error</string>
+</resources>
