@@ -2,4 +2,9 @@
     <string name="app_name">Desafio Android</string>
     <string name="str_try_again">Try again</string>
     <string name="str_error">Error</string>
+    <string name="str_views">Views</string>
+    <string name="str_most_recent">Most Recent</string>
+    <string name="str_comments">Comments</string>
+    <string name="str_order_by">Order by</string>
+    <string name="str_loading_more_shots">Loading more shots</string>
 </resources>

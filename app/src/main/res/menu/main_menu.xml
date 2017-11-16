@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/ic_order"
+        android:title="@string/str_order_by"
+        android:visible="true"
+        app:iconTint="@color/white"
+        app:showAsAction="always|withText">
+        <menu>
+            <item
+                android:id="@+id/menuMainComment"
+                android:icon="@drawable/ic_comment"
+                android:title="@string/str_comments"
+                app:iconTint="@color/grey" />
+            <item
+                android:id="@+id/menuMainRecent"
+                android:icon="@drawable/ic_recent"
+                android:title="@string/str_most_recent"
+                app:iconTint="@color/grey" />
+            <item
+                android:id="@+id/menuMainView"
+                android:icon="@drawable/ic_view"
+                android:title="@string/str_views"
+                app:iconTint="@color/grey" />
+        </menu>
+    </item>
+
+</menu>

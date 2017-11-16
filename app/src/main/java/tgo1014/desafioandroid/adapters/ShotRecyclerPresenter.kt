@@ -1,7 +1,7 @@
 package tgo1014.desafioandroid.adapters
 
 import tgo1014.desafioandroid.contracts.ShotRecyclerContract
-import tgo1014.desafioandroid.model.Shot
+import tgo1014.desafioandroid.model.objects.Shot
 
 class ShotRecyclerPresenter(private var shotList: List<Shot>) : ShotRecyclerContract.ShotRowPresenter {
 

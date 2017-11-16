@@ -8,97 +8,215 @@
     android:orientation="vertical"
     tools:context="tgo1014.desafioandroid.ui.DetailActivity">
 
-    <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/detailImageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/detailToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleTextColor="@color/white"
+                android:layout_weight="1"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme">
+
+                <ProgressBar
+                    android:id="@+id/detailTollbarProgressBar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:theme="@style/WhiteProgress"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:baselineAligned="false"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <LinearLayout
+
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/detailImageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="5dp">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <android.support.v7.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_view"
-                    app:tint="#616161" />
-
-                <TextView
-                    android:id="@+id/detailTxtViews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="9999" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="5dp">
+                android:layout_height="match_parent"
+                android:layout_weight="1.3"
+                android:background="@color/white"
+                app:cardUseCompatPadding="true">
 
-                <android.support.v7.widget.AppCompatImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/detailAvatar"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:src="@drawable/ic_recent" />
+
+                        <TextView
+                            android:id="@+id/detailUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/detailAvatar"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Tiago Araujo" />
+
+                        <TextView
+                            android:id="@+id/detailUserUsername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:textAllCaps="false"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/detailUserName"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.571"
+                            tools:text="Tgo1014" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="12dp">
+
+                        <TextView
+                            android:id="@+id/detailDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </ScrollView>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_favorite"
-                    app:tint="#616161" />
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/detailTxtFavorites"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="9999" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
-            </LinearLayout>
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_view"
+                            app:tint="#616161" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="5dp">
+                        <TextView
+                            android:id="@+id/detailTxtViews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="9999" />
 
-                <android.support.v7.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_comment"
-                    app:tint="#616161" />
+                    </LinearLayout>
 
-                <TextView
-                    android:id="@+id/detailTxtComments"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="9999" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
-            </LinearLayout>
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_favorite"
+                            app:tint="#616161" />
 
+                        <TextView
+                            android:id="@+id/detailTxtFavorites"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="9999" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_comment"
+                            app:tint="#616161" />
+
+                        <TextView
+                            android:id="@+id/detailTxtComments"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="9999" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

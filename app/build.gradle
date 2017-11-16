@@ -3,6 +3,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+def keystoreFile = rootProject.file("keystore.properties")
+def keystore = new Properties()
+keystore.load(new FileInputStream(keystoreFile))
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -12,6 +16,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes.each {
+        it.buildConfigField 'String', 'DRIBBBLE_API_KEY', keystore['DRIBBBLE_API_KEY']
     }
     buildTypes {
         release {

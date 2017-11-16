@@ -1,21 +1,23 @@
 package tgo1014.desafioandroid.contracts
 
-import tgo1014.desafioandroid.model.Shot
+import tgo1014.desafioandroid.base.BasePresenter
+import tgo1014.desafioandroid.model.objects.Shot
 
 interface DetailContract {
 
     interface DetailView {
         fun showShotDetail(shot: Shot)
-        fun showLoading()
-        fun hideLoading()
         fun showError()
         fun getShotIdExtra()
+        fun showLoadingToolbar()
+        fun hideLoadingToolbar()
+        fun onBackPressed()
     }
 
-    interface DetailPresenter {
-        fun onViewShowing()
-        fun detach()
+    interface DetailPresenter : BasePresenter<DetailView> {
+        fun onDestroy(shot: Shot?)
         fun shotObtained(idShot: Int)
+        fun onOptionsItemSelected(itemId: Int)
     }
 
     interface DetailModel {
@@ -25,5 +27,8 @@ interface DetailContract {
         }
 
         fun requestShot(shotId: Int, listener: OnShotRequestCompletionListener)
+        fun saveShotsCache(shot: Shot?)
+        fun restoreShotsCache(): Shot?
+        fun clearShotsCache()
     }
 }

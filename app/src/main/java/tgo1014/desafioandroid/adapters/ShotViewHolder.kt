@@ -30,8 +30,8 @@ class ShotViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), ShotRe
     override fun setImage(drawable: String) {
         Picasso.with(itemView.context)
                 .load(drawable)
+                .fit()
                 .centerCrop()
-                .resize(700, 500)
                 .placeholder(R.drawable.loading_animation)
                 .into(imageView)
     }
