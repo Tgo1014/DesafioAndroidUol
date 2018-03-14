@@ -1,16 +1,16 @@
-# Desafio Android UOL
+# UOL's Android Challenge
+App developed for an Android position at UOL with the objective to use the [Dribbble API](http://developer.dribbble.com/v1/) and create a shot list.
 
-Aplicativo desenvolvido para processo seletivo no UOL, com objetivo de consultar a [Dribbble API](http://developer.dribbble.com/v1/) e criar listagem de shots.
-# O que foi utilizado?
+# What was used?
   - Kotlin
   - MVP
   - Retrofit
   - Picasso
   - GSON
-  - Diferentes telas conforme orientação
+  - Different screens based on orientation
   - Material Design
  
-# Imagens  
+# Images  
 ![](https://github.com/Tgo1014/desafio-android-uol/raw/master/images/main.PNG) ![](https://github.com/Tgo1014/desafio-android-uol/raw/master/images/detail.PNG)
 ![](https://github.com/Tgo1014/desafio-android-uol/raw/master/images/main_horizontal.PNG)
 ![](https://github.com/Tgo1014/desafio-android-uol/raw/master/images/detail_horizontal.PNG)
